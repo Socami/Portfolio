@@ -86,6 +86,7 @@ h1 {
     border: none;
     cursor: pointer;
     transition: 1s;
+    color: var(--bg);
 }
 
 .hero h3 {
