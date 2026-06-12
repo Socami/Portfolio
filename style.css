@@ -423,7 +423,7 @@ main {
     nav ul {
         gap: 20px;
         padding: 0 15px;
-        font-size: 8px;
+        font-size:10px;
     }
 
     .hero {
@@ -458,7 +458,7 @@ main {
     }
 
     main {
-        margin: 0 15px;
+        margin: 0 30px;
     }
 
     /* — Présentation — */
@@ -479,14 +479,39 @@ main {
         font-size: 30px;
     }
 
+    .window-header {
+        justify-content: right;
+        border-radius: 20px 20px 0 0;
+        font-size: 13px;
+    }
+
+    .window-header h2{
+        margin-right: 5px;
+    }
+
+    .window-buttons {
+        position: absolute;
+        left: 20px;
+        display: flex;
+        gap: 5px;
+    }
+
+    .window-buttons button {
+        height: 12px;
+        width: 10px;
+        border-radius: 1000px;
+        border: none;
+
+    }
+
     .insta-button {
-        right: 15px;
+        right: -15px;
         top: 70px;
     }
 
     .socami-web-page {
-        left: 15px;
-        bottom: 60px;
+        left: -15px;
+        bottom: 30px;
     }
 
     /* — Skills — */
