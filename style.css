@@ -58,6 +58,7 @@ nav>* {
 /* ============ HERO ============ */
 
 .hero {
+    position: relative;
     background-color: var(--gray);
     margin: 0 50px 50px 50px;
     display: flex;
@@ -67,6 +68,79 @@ nav>* {
     text-align: center;
     height: calc(100vh - 140px);
     justify-content: space-between;
+}
+
+/* ============ Chevron animation ============ */
+.chevron-anim {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    pointer-events: none;
+}
+
+.chevron {
+    position: absolute;
+    width: 1.4rem;
+    height: 0.32rem;
+    opacity: 0;
+    transform: scale(0.3);
+    animation: move-chevron 3s ease-out infinite;
+}
+
+.chevron:first-child {
+    animation: move-chevron 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+    animation: move-chevron 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: var(--pastel-purple);
+}
+
+.chevron:before {
+    left: 0;
+    transform: skewY(30deg);
+}
+
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skewY(-30deg);
+}
+
+@keyframes move-chevron {
+    25% {
+        opacity: 1;
+    }
+
+    33.3% {
+        opacity: 1;
+        transform: translateY(1.52rem);
+    }
+
+    66.6% {
+        opacity: 1;
+        transform: translateY(2.08rem);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(3.2rem) scale(0.5);
+    }
 }
 
 h1 {
@@ -360,8 +434,6 @@ main {
 }
 
 
-
-
 /* ============ FOOTER ============ */
 
 
@@ -398,6 +470,10 @@ main {
     .insta-button {}
 
     .socami-web-page {}
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* ============ RESPONSIVE - MOBILE ============ */
@@ -432,6 +508,10 @@ main {
         height: auto;
         min-height: calc(100vh - 80px);
         padding: 40px 20px;
+    }
+
+    .chevron-anim {
+        display: none;
     }
 
     h1 {
@@ -542,4 +622,30 @@ main {
     .coming-soon {
         height: 180px;
     }
+
+    /* — Contact — */
+
+    .contact-hero {
+        margin: 0 10px 10px 10px;
+        padding: 60px 20px 60px 20px;
+    }
+
+    .contact-hero h1 {
+        font-size: 50px;
+    }
+
+    .contact-hero h3 {
+        font-size: 13px;
+    }
+
+    .contact-section {
+        margin-top: 60px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
+
+
